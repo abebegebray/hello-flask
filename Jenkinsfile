@@ -29,6 +29,7 @@ stages{
             sh 'tar -zcvf hello-${BUILD_NUMBER}.tar.gz application.py requirements.txt'
         }
     }
+}
     post {
         always {
             archiveArtifacts artifacts: '*.tar.gz',
@@ -36,5 +37,5 @@ stages{
                    onlyIfSuccessful: true
         }
     }
-    }
+    
 }
