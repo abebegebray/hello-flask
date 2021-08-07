@@ -29,8 +29,5 @@ stages{
             sh 'tar -zcvf hello-${BUILD_NUMBER}.tar.gz application.py requirements.txt'
         }
     }
-    archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
-        }
     }
-}
 }
