@@ -31,7 +31,7 @@ stages{
     }
     post {
         always {
-            archiveArtifacts artifacts: 'hello-${BUILD_NUMBER}.tar.gz', fingerprint: true
+            archiveArtifacts artifacts: 'hello-${BUILD_NUMBER}.tar.gz, allowEmptyArchive: true, fingerprint: true, onlyIfSuccessful: true
         }
     }
     }
