@@ -32,9 +32,7 @@ stages{
 }
     post {
         always {
-            archiveArtifacts artifacts: '*.tar.gz',
-                   fingerprint: true,
-                   onlyIfSuccessful: true
+            archiveArtifacts artifacts: '**/*.txt', allowEmptyArchive: true, fingerprint: true, onlyIfSuccessful: true
         }
     }
     
