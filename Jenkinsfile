@@ -32,12 +32,5 @@ stages{
     archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
         }
     }
-        post {
-      always {
-          // junit 'test-reports/*.xml'
-          archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
-        }
-      }
-
-    }
+}
 }
