@@ -29,10 +29,15 @@ stages{
             sh 'tar -zcvf hello-${BUILD_NUMBER}.tar.gz application.py requirements.txt'
         }
     }
-    post {
-        always {
-            archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
+    archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
         }
     }
+        post {
+      always {
+          // junit 'test-reports/*.xml'
+          archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
+        }
+      }
+
     }
 }
